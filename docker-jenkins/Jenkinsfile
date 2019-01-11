@@ -1,6 +1,5 @@
 node {
     checkout scm
-    ls -a
     def customImage = docker.build("hellowhale:${env.BUILD_ID}", "-f Dockerfile ../.")
     customImage.push()
 }
